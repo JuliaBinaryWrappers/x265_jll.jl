@@ -2,9 +2,9 @@ module x265_jll
 
 if isdefined(Base, :Experimental) && isdefined(Base.Experimental, Symbol("@optlevel"))
     @eval Base.Experimental.@optlevel 0
-end                    
-                        
-if VERSION < v"1.3.0-rc4"
+end
+
+if VERSION < v"1.6.0-DEV"
     # We lie a bit in the registry that JLL packages are usable on Julia 1.0-1.2.
     # This is to allow packages that might want to support Julia 1.0 to get the
     # benefits of a JLL package on 1.3 (requiring them to declare a dependence on
@@ -19,29 +19,60 @@ if VERSION < v"1.3.0-rc4"
     # the deprecated `build.jl` mechanism to download the binaries through e.g.
     # `BinaryProvider.jl`.  This should work well for the simplest packages, and
     # require greater and greater heroics for more and more complex packages.
-    error("Unable to import x265_jll on Julia versions older than 1.3!")
+    error("Unable to import x265_jll on Julia versions older than 1.6!")
 end
 
-using Pkg, Pkg.BinaryPlatforms, Pkg.Artifacts, Libdl
+using Base.BinaryPlatforms, Artifacts, Libdl, JLLWrappers
 import Base: UUID
+
+wrapper_available = false
+"""
+    is_available()
+
+Return whether the artifact is available for the current platform.
+"""
+is_available() = wrapper_available
 
 # We put these inter-JLL-package API values here so that they are always defined, even if there
 # is no underlying wrapper held within this JLL package.
 const PATH_list = String[]
 const LIBPATH_list = String[]
 
+# We determine, here, at compile-time, whether our JLL package has been dev'ed and overridden
+override_dir = joinpath(dirname(@__DIR__), "override")
+if isdir(override_dir)
+    function find_artifact_dir()
+        return override_dir
+    end
+else
+    function find_artifact_dir()
+        return artifact"x265"
+    end
+
+    """
+        dev_jll()
+    
+    Check this package out to the dev package directory (usually ~/.julia/dev),
+    copying the artifact over to a local `override` directory, allowing package
+    developers to experiment with a locally-built binary.
+    """
+    function dev_jll()
+        # We do this in an external process to avoid having to load `Pkg`.
+        run(`$(Base.julia_cmd()) /home/sabae/.julia/dev/BinaryBuilder/src/dev.jl`)
+    end
+end
 # Load Artifacts.toml file
 artifacts_toml = joinpath(@__DIR__, "..", "Artifacts.toml")
 
 # Extract all platforms
-artifacts = Pkg.Artifacts.load_artifacts_toml(artifacts_toml; pkg_uuid=UUID("dfaa095f-4041-5dcd-9319-2fabd8486b76"))
-platforms = [Pkg.Artifacts.unpack_platform(e, "x265", artifacts_toml) for e in artifacts["x265"]]
+artifacts = get_artifacts(artifacts_toml, UUID("dfaa095f-4041-5dcd-9319-2fabd8486b76"))
+platforms = get_platforms("x265", artifacts_toml, artifacts)
 
 # Filter platforms based on what wrappers we've generated on-disk
-filter!(p -> isfile(joinpath(@__DIR__, "wrappers", replace(triplet(p), "arm-" => "armv7l-") * ".jl")), platforms)
+cleanup_platforms!(@__DIR__, platforms)
 
 # From the available options, choose the best platform
-best_platform = select_platform(Dict(p => triplet(p) for p in platforms))
+best_platform = select_best_platform(platforms)
 
 # Silently fail if there's no binaries for this platform
 if best_platform === nothing
@@ -50,7 +81,7 @@ else
     # Load the appropriate wrapper.  Note that on older Julia versions, we still
     # say "arm-linux-gnueabihf" instead of the more correct "armv7l-linux-gnueabihf",
     # so we manually correct for that here:
-    best_platform = replace(best_platform, "arm-" => "armv7l-")
+    best_platform = cleanup_best_platform(best_platform)
     include(joinpath(@__DIR__, "wrappers", "$(best_platform).jl"))
 end
 

@@ -9,6 +9,7 @@ LIBPATH_default = ""
 
 # Relative path to `libx265`
 const libx265_splitpath = ["bin", "libx265.dll"]
+const libx265_joinpath = joinpath(libx265_splitpath...)
 
 # This will be filled out by __init__() for all products, as it must be done at runtime
 libx265_path = ""
@@ -23,59 +24,34 @@ const libx265 = "libx265.dll"
 
 # Relative path to `x265`
 const x265_splitpath = ["bin", "x265.exe"]
+const x265_joinpath = joinpath(x265_splitpath...)
 
 # This will be filled out by __init__() for all products, as it must be done at runtime
 x265_path = ""
 
 # x265-specific global declaration
-function x265(f::Function; adjust_PATH::Bool = true, adjust_LIBPATH::Bool = true)
-    global PATH, LIBPATH
-    env_mapping = Dict{String,String}()
-    if adjust_PATH
-        if !isempty(get(ENV, "PATH", ""))
-            env_mapping["PATH"] = string(PATH, ';', ENV["PATH"])
-        else
-            env_mapping["PATH"] = PATH
-        end
-    end
-    if adjust_LIBPATH
-        LIBPATH_base = get(ENV, LIBPATH_env, expanduser(LIBPATH_default))
-        if !isempty(LIBPATH_base)
-            env_mapping[LIBPATH_env] = string(LIBPATH, ';', LIBPATH_base)
-        else
-            env_mapping[LIBPATH_env] = LIBPATH
-        end
-    end
-    withenv(env_mapping...) do
-        f(x265_path)
-    end
-end
+x265(f::Function; adjust_PATH::Bool = true, adjust_LIBPATH::Bool = true) =
+    executable_wrapper(f, x265_path, PATH, LIBPATH, LIBPATH_env, LIBPATH_default, adjust_PATH, adjust_LIBPATH, ':')
 
+
+# Inform that the wrapper is available for this platform
+wrapper_available = true
 
 """
 Open all libraries
 """
 function __init__()
-    global artifact_dir = abspath(artifact"x265")
+    # This either calls `@artifact_str()`, or returns a constant string if we're overridden.
+    global artifact_dir = find_artifact_dir()
 
-    # Initialize PATH and LIBPATH environment variable listings
     global PATH_list, LIBPATH_list
-    global libx265_path = normpath(joinpath(artifact_dir, libx265_splitpath...))
+    global libx265_path, libx265_handle
+    libx265_path, libx265_handle = get_lib_path_handle!(LIBPATH_list, artifact_dir, libx265_joinpath, RTLD_LAZY | RTLD_DEEPBIND)
 
-    # Manually `dlopen()` this right now so that future invocations
-    # of `ccall` with its `SONAME` will find this path immediately.
-    global libx265_handle = dlopen(libx265_path)
-    push!(LIBPATH_list, dirname(libx265_path))
+    global x265_path = get_exe_path!(PATH_list, artifact_dir, x265_joinpath)
 
-    global x265_path = normpath(joinpath(artifact_dir, x265_splitpath...))
-
-    push!(PATH_list, dirname(x265_path))
     # Filter out duplicate and empty entries in our PATH and LIBPATH entries
-    filter!(!isempty, unique!(PATH_list))
-    filter!(!isempty, unique!(LIBPATH_list))
-    global PATH = join(PATH_list, ';')
-    global LIBPATH = join(vcat(LIBPATH_list, [Sys.BINDIR, joinpath(Sys.BINDIR, Base.LIBDIR, "julia"), joinpath(Sys.BINDIR, Base.LIBDIR)]), ';')
-
-    
+    global PATH, LIBPATH
+    PATH, LIBPATH = cleanup_path_libpath!(PATH_list, LIBPATH_list, ';')
+ 
 end  # __init__()
-
