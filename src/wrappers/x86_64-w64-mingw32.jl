@@ -8,13 +8,13 @@ function __init__()
     JLLWrappers.@generate_init_header()
     JLLWrappers.@init_library_product(
         libx265,
-        "bin/libx265.dll",
+        "bin\\libx265.dll",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
     JLLWrappers.@init_executable_product(
         x265,
-        "bin/x265.exe",
+        "bin\\x265.exe",
     )
 
     JLLWrappers.@generate_init_footer()
