@@ -2,7 +2,7 @@
 export libx265, x265
 
 JLLWrappers.@generate_wrapper_header("x265")
-JLLWrappers.@declare_library_product(libx265, "libx265.so.209")
+JLLWrappers.@declare_library_product(libx265, "libx265.so.212")
 JLLWrappers.@declare_executable_product(x265)
 function __init__()
     JLLWrappers.@generate_init_header()
