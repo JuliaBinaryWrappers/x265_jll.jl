@@ -1,151 +1,160 @@
 [[x265]]
 arch = "aarch64"
-git-tree-sha1 = "2695e9f3aa65aa4c742bf2a1a98f9a2e4af26fff"
+git-tree-sha1 = "c70ffd15b6adfc269b041a77ed26af364f9969c4"
 os = "macos"
 
     [[x265.download]]
-    sha256 = "356504a9c95c0efa675ad13f81620a389bc4055e15725073c92171edab60a75c"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.aarch64-apple-darwin.tar.gz"
+    sha256 = "46da96c4c31a970f469e12886c0734de0c88f42afdf215f24f2254f09b451b1c"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.aarch64-apple-darwin.tar.gz"
 [[x265]]
 arch = "aarch64"
-git-tree-sha1 = "773b9e47fc2a8a0aa545221a35012ea94fa331f7"
+git-tree-sha1 = "4c62e405e85fd9c296a8cdde03b19c5f88f188e3"
 libc = "glibc"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "7c59459d3b09756b3b6583116d2178ed72422e85be5fbaee61a7dc24d31cfeae"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.aarch64-linux-gnu.tar.gz"
+    sha256 = "7c1dc66a00c1d677c26cd77bc89167918f5f2cf70378aa3c7619fc6d5b776716"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.aarch64-linux-gnu.tar.gz"
 [[x265]]
 arch = "aarch64"
-git-tree-sha1 = "a06183866d067d41a6f6775e8edbb5c58bbe28a1"
+git-tree-sha1 = "3b254b8e09708c10c1711438b6204343ed732717"
 libc = "musl"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "17c0492f8ac63a060ec9c7dcb2fc2484c73e30fa40f8b22f42d153bb6a40d005"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.aarch64-linux-musl.tar.gz"
+    sha256 = "e51fd5b938b905f3db53dc09871fc3cab58857eda962c3e8e1eb97cede8acc98"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.aarch64-linux-musl.tar.gz"
 [[x265]]
 arch = "aarch64"
-git-tree-sha1 = "e0a3bade8df0dcaebc323da4005d311350c5b496"
+git-tree-sha1 = "8ccc9d6195728947bd9882ed14375b8404c7ecc6"
 os = "freebsd"
 
     [[x265.download]]
-    sha256 = "dd93a3a0faca6139fd755cf6d8d78f4ea1f43afca7d02281a42dde505617d5b6"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.aarch64-unknown-freebsd.tar.gz"
+    sha256 = "05307931c275f5b39a942d8b8b0fee35b0b45191d2db2ef8d21804407bfb99fe"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.aarch64-unknown-freebsd.tar.gz"
 [[x265]]
 arch = "armv6l"
 call_abi = "eabihf"
-git-tree-sha1 = "b40ff6a67a0edae12e920c5c90faad0873c9c19c"
+git-tree-sha1 = "889b53089cf36a8d686f17f3a67fae54f4cb554c"
 libc = "glibc"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "66f14ec88c20cb9903b97e98fc3708dc27f859d0197d3329ffc412fe1e07cbac"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.armv6l-linux-gnueabihf.tar.gz"
+    sha256 = "82b4875349167e46225de585464054da6485a9e040776cae1bcd60260469fc33"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.armv6l-linux-gnueabihf.tar.gz"
 [[x265]]
 arch = "armv6l"
 call_abi = "eabihf"
-git-tree-sha1 = "5db7e911209c07e7d1b2afb565f8de75ba1f70b4"
+git-tree-sha1 = "ea6797c506ae66dadab85408c2d8a520a8c4e157"
 libc = "musl"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "819b2153cd58faa802497c84e3dd8d002cc5628256440bb832039f0c45c3568b"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.armv6l-linux-musleabihf.tar.gz"
+    sha256 = "37223753265fec1b4ff74aaa1fa728bf482f608bf64b539a9e7d4737b86d82e9"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.armv6l-linux-musleabihf.tar.gz"
 [[x265]]
 arch = "armv7l"
 call_abi = "eabihf"
-git-tree-sha1 = "c9835f7bcee296f5ef2e9890c97cbd18b777b96f"
+git-tree-sha1 = "c0c7d0faa9d299ef96083c33db8b24a65c3019de"
 libc = "glibc"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "7ada415a0d100b1bb26d10f235ef164ac13ec339ab245f5a965a8755063ba17f"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.armv7l-linux-gnueabihf.tar.gz"
+    sha256 = "8d050419f11ccdc735bc6521aadb86a2b8d4c145a7a3d1fe014a0552ab3de4e1"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.armv7l-linux-gnueabihf.tar.gz"
 [[x265]]
 arch = "armv7l"
 call_abi = "eabihf"
-git-tree-sha1 = "0b9bb1ebdae15fcaa10a4273ce8bea3d8a1fa855"
+git-tree-sha1 = "efc5b0da15339745c2cabfdf0bd23477d5f5f524"
 libc = "musl"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "3d32205d2f684eda5196f2ccfd36a9693703f88775c5b7d96c06c93e7ea192fe"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.armv7l-linux-musleabihf.tar.gz"
+    sha256 = "3ca1164ff210f13f1528f29d9a9651b0de91755d23ec245a1a1890745b4bd6a0"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.armv7l-linux-musleabihf.tar.gz"
 [[x265]]
 arch = "i686"
-git-tree-sha1 = "4ea1e17b505d16227017c8e21d6808904af2e941"
+git-tree-sha1 = "ed0381c877158be769fda23aa11e09c96a4c5b91"
 libc = "glibc"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "0bfb2616c437271e9b7796295aa9cf4bbaae25855cf8fd5989be53801c9dd0b1"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.i686-linux-gnu.tar.gz"
+    sha256 = "b92956d77bcc27f074eb6e6b51018dfde5cdc1eae51d24132175f2b9b8424a0d"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.i686-linux-gnu.tar.gz"
 [[x265]]
 arch = "i686"
-git-tree-sha1 = "ef28e52525b8d35017a098dccee91155e310cdf9"
+git-tree-sha1 = "6984a1ac3d51c28cbd3c89bea3bab748e2a7a149"
 libc = "musl"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "c8e608dd403dbc797836ec68861973e3a4444408a5e49caaef502768318f2aa3"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.i686-linux-musl.tar.gz"
+    sha256 = "51181abe792845f8172e9df4752f532f94ae5c616bd4bb70fbc3f5050de78fa8"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.i686-linux-musl.tar.gz"
 [[x265]]
 arch = "i686"
-git-tree-sha1 = "12b08c4751a0a2215a4caed32536cef64deb7dcd"
+git-tree-sha1 = "032ea8deb066d74046ab6bfede6d4a65e4800690"
 os = "windows"
 
     [[x265.download]]
-    sha256 = "0e2c9026d15d5d145be2c33ee36bd24ef16af1bb658ebe7999d30256ef00a1e3"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.i686-w64-mingw32.tar.gz"
+    sha256 = "baed1af52fc2bba1fdb2f42b6539ac873f4331f01584aeda7d3bfc22e6403b8b"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.i686-w64-mingw32.tar.gz"
 [[x265]]
 arch = "powerpc64le"
-git-tree-sha1 = "aae3874b996ca3c1c1f1153cb3c3a4470893c954"
+git-tree-sha1 = "8a5c6ea7dc8050030481d4effcb6ab8a038b5365"
 libc = "glibc"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "edd50a8915d7022323f7c42bddbee66271585408bb1619b607ed820a9a62f51d"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.powerpc64le-linux-gnu.tar.gz"
+    sha256 = "3780dfc7cdfb575b3218acb9d8af6d8663098fdeb70a48f4b94aa38ed45a8cf9"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.powerpc64le-linux-gnu.tar.gz"
+[[x265]]
+arch = "riscv64"
+git-tree-sha1 = "d0dac10e66c244b259dd22d893e980348d1ca543"
+libc = "glibc"
+os = "linux"
+
+    [[x265.download]]
+    sha256 = "554ce45e5625bdd9d87633eb76d107751f7d78929bef7645cc9d9b7fa2e1554e"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.riscv64-linux-gnu.tar.gz"
 [[x265]]
 arch = "x86_64"
-git-tree-sha1 = "668738470d3673c6e30b14b4c2e207cd2ef3c236"
+git-tree-sha1 = "1adf0a7e4c842ab9addef6fd022d726db58cb7a2"
 os = "macos"
 
     [[x265.download]]
-    sha256 = "9365de4ca936089581a5c230a51e7e86801051314f65502223f514baf5c76dea"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.x86_64-apple-darwin.tar.gz"
+    sha256 = "ceadb666a4483ad8ad2cb4dcf3122dda3130174ffa48e17f6cf85053a1d20850"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.x86_64-apple-darwin.tar.gz"
 [[x265]]
 arch = "x86_64"
-git-tree-sha1 = "3e26888b8e5d1131203917e205342b4c4816b185"
+git-tree-sha1 = "c9533bea1f28a1adea8cb096009f360534f7ba90"
 libc = "glibc"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "142910f8ccc2b93d1a4a580139dcdd05b9a38f4eb0dcffa19e9af38ca2f1c42e"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.x86_64-linux-gnu.tar.gz"
+    sha256 = "6623f97bea74f1cb8e5b2dfba5bf5a71ed36f4a5906f49434dfb9b3521896d31"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.x86_64-linux-gnu.tar.gz"
 [[x265]]
 arch = "x86_64"
-git-tree-sha1 = "914fbad9020417edb8c1bfb2e648be420697cec5"
+git-tree-sha1 = "4986eb4acaf3a3eb6f8486badc529e3944b5a4ae"
 libc = "musl"
 os = "linux"
 
     [[x265.download]]
-    sha256 = "4939a9f50cdd246c64510e8503f78c0f3277dcf7b0d873b266f84e9a08987f7f"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.x86_64-linux-musl.tar.gz"
+    sha256 = "e4e82fafe920003dace8e7780c98cca4ba3375c9489ccbed8cd604782d5bb420"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.x86_64-linux-musl.tar.gz"
 [[x265]]
 arch = "x86_64"
-git-tree-sha1 = "5629220039f9e7fb38ad199be14faaf43b9490f6"
+git-tree-sha1 = "8e9085602c7d6a37747bd3b2ea14cd52d7d8c140"
 os = "freebsd"
 
     [[x265.download]]
-    sha256 = "7cd0e72da822dd8ecb11edf7f3cae5762893bed651b1c68c88a3a01d02d923f8"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.x86_64-unknown-freebsd.tar.gz"
+    sha256 = "8cef2ede435c72aaf048ef1a4c12c874914db711c5fbf67398797c12d6934ab7"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.x86_64-unknown-freebsd.tar.gz"
 [[x265]]
 arch = "x86_64"
-git-tree-sha1 = "a0315ef2973e1f00ff1d8ae23cea8a0aca9c7e88"
+git-tree-sha1 = "ba2dc75245508e0cf0c860081b2f2fd10bdf4357"
 os = "windows"
 
     [[x265.download]]
-    sha256 = "89c9007a6b475e79f487e181bd920d190689dc6afe3f7f442987e8fcbaebc40c"
-    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.0.0+0/x265.v4.0.0.x86_64-w64-mingw32.tar.gz"
+    sha256 = "5a1227f9a4b0fbc1235387396a547d3dfee6c078a69f634d63cb814c93d3a1ac"
+    url = "https://github.com/JuliaBinaryWrappers/x265_jll.jl/releases/download/x265-v4.1.0+0/x265.v4.1.0.x86_64-w64-mingw32.tar.gz"

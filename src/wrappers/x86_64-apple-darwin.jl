@@ -2,13 +2,13 @@
 export libx265, x265
 
 JLLWrappers.@generate_wrapper_header("x265")
-JLLWrappers.@declare_library_product(libx265, "@rpath/libx265.212.dylib")
+JLLWrappers.@declare_library_product(libx265, "@rpath/libx265.215.dylib")
 JLLWrappers.@declare_executable_product(x265)
 function __init__()
     JLLWrappers.@generate_init_header()
     JLLWrappers.@init_library_product(
         libx265,
-        "lib/libx265.212.dylib",
+        "lib/libx265.215.dylib",
         RTLD_LAZY | RTLD_DEEPBIND,
     )
 
